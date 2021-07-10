@@ -45,6 +45,8 @@ public class PersonController {
             LOGGER.info("Time Elapsed in milli second = " + duration + " ms");
             String formattedRes = "Time Elapsed in milli second = " + duration + " ms";
             List list = Arrays.asList(formattedRes, personIterable);
+            if (list.isEmpty())
+                throw new Exception("");
             return ResponseEntity.ok().body(list);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
