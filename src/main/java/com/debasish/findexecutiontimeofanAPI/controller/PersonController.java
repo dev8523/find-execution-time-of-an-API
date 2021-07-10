@@ -33,10 +33,10 @@ public class PersonController {
     }
 
     @PostMapping(value = "/saveAndRetrieve", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> savePersonInDB(@RequestBody @Validated Person person) {
+    public ResponseEntity<?> savePersonInDB(@RequestBody @Validated List<Person> persons) {
         try {
             Instant startTime = Instant.now();
-            personRepository.save(person);
+            personRepository.saveAll(persons);
             LOGGER.info("Record Persisted to DB Successfully !!");
             Iterable<Person> personIterable = personRepository.findAll();
             LOGGER.info("Found the person details from DB: " + personIterable);
