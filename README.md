@@ -4,7 +4,7 @@ You can use this implementation to find time duration to complete the execution 
 # Dependencies used:
 Spring Data Jpa, Spring Web
 
-# Sample Payload:
+# Request Payload Sample:
 ``[
 {
 "age": 24,
@@ -17,3 +17,40 @@ Spring Data Jpa, Spring Web
 "lastName": "Potter"
 }
 ]``
+
+# Response Payload Sample:
+`[
+"Time Elapsed in milli second = 5 ms",
+[
+{
+"age": 20,
+"firstName": "Harry",
+"lastName": "Potter"
+},
+{
+"age": 24,
+"firstName": "Debasish",
+"lastName": "Sahoo"
+},
+{
+"age": 31,
+"firstName": "FGH",
+"lastName": "FFG"
+},
+{
+"age": 33,
+"firstName": "FGH",
+"lastName": "FFG"
+},
+{
+"age": 34,
+"firstName": "FGH",
+"lastName": "FFG"
+},
+{
+"age": 44,
+"firstName": "FGH",
+"lastName": "FFG"
+}
+]
+]`
