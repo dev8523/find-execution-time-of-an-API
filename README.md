@@ -3,6 +3,8 @@
 You can use this implementation to find time duration to complete the execution of an API from the start to end
 persisting all records and then fetching in same implementation.
 
+The request payload data will be persisted into DB when you hit the API.
+
 # Dependencies used:
 
 Spring Data Jpa, Spring Web
