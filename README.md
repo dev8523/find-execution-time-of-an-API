@@ -7,6 +7,12 @@ persisting all records and then fetching in same implementation.
 
 Spring Data Jpa, Spring Web
 
+# DB used:
+
+```bash
+MySQL
+```
+
 # Test API locally:
 
 You can run the app without packaging it using:
