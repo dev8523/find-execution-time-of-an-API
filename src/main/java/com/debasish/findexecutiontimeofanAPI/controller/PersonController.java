@@ -32,7 +32,10 @@ public class PersonController {
         return "Hello World";
     }
 
-    @PostMapping(value = "/saveAndRetrieve", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(
+            value = "/saveAndRetrieve",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> savePersonInDB(@RequestBody @Validated List<Person> persons) {
         try {
             Instant startTime = Instant.now();
@@ -44,9 +47,7 @@ public class PersonController {
             long duration = Duration.between(startTime, endTime).toMillis();
             LOGGER.info("Time Elapsed in milli second = " + duration + " ms");
             String formattedRes = "Time Elapsed in milli second = " + duration + " ms";
-            List list = Arrays.asList(formattedRes, personIterable);
-            if (list.isEmpty())
-                throw new Exception("");
+            List<Object> list = Arrays.asList(formattedRes, personIterable);
             return ResponseEntity.ok().body(list);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
